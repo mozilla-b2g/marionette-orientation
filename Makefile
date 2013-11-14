@@ -1,10 +1,5 @@
-TESTS?=$(shell find test -name *_test.js)
-REPORTER?=spec
-MOCHA_OPTS=--reporter $(REPORTER) \
-					 $(TESTS)
-
 .PHONY: default
-default: lint test
+default: test
 
 package.json:
 	npm install
@@ -18,4 +13,6 @@ b2g: package.json
 
 .PHONY: test
 test: b2g
-	./node_modules/.bin/marionette-mocha $(MOCHA_OPTS) --timeout 10s --verbose
+	./node_modules/.bin/marionette-mocha \
+		$(wildcard ./*_test.js) \
+		$(wildcard ./lib/*_test.js)

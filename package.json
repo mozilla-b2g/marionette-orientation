@@ -1,7 +1,7 @@
 {
   "name": "marionette-settings-api",
   "version": "0.1.0",
-  "author": "James Lal [:lightsofapollo]"
+  "author": "James Lal [:lightsofapollo]",
   "devDependencies": {
     "marionette-client": "~1.0.0",
     "mozilla-download": "~0.3.0",
