@@ -1,5 +1,20 @@
 # Marionette Orientation API
 
+Hacky api for setting the "orientation" on b2g-desktop. Does not
+actually interface with the screen apis but will resize b2g-desktop
+window correctly and emit resize events.
+
+### Usage:
+
+```
+var client; // some instance of marionette.client
+client.plugin('orientation', require('marionette-orientation'));
+
+client.orientation.get(); // portrait-primary
+client.orientation.set('landscape-primary');
+client.orientation.get(); // landscape-primary
+```
+
 ## License
 
 Copyright (c) 2013 Mozilla Foundation
